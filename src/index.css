@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.conten-card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
