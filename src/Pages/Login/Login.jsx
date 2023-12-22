@@ -6,8 +6,8 @@ import { useState } from "react";
 const Login = () => {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
-  const from = location.state?.from?.pathname || "/";
-  console.log(from);
+
+  console.log(location);
   const handleSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
