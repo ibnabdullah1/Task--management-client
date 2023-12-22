@@ -1,4 +1,4 @@
-import Benefit from "../../../../Components/Benefit";
+import Benefit from "../../../Components/Benefit";
 import Banner from "../Banner/Banner";
 
 const Home = () => {

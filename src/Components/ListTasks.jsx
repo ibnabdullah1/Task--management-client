@@ -86,7 +86,7 @@ const Section = ({ status, tasks, todoS, ongoing, complete, setTasks }) => {
   return (
     <div
       ref={drop}
-      className={`w-64 min-h-[250px] mt-10  p-3 rounded ${
+      className={`lg:w-64 overflow-x-auto  min-h-[250px] mt-10  p-3 rounded ${
         isOver ? "bg-gray-800" : "bg-[#2f2f2f]"
       }`}
     >
@@ -137,11 +137,15 @@ const TaskCard = ({ task, tasks, setTasks }) => {
   return (
     <div
       ref={drag}
-      className={`bg-gray-700 p-2 mt-2 rounded flex justify-between items-center ${
+      className={`bg-gray-700 p-2 mt-2 rounded flex justify-between items-baseline ${
         isDragging ? "opacity-30" : "opacity-100"
       } `}
     >
-      <h1 className=" text-white"> {task.name}</h1>
+      <div>
+        <h1 className=" text-white"> {task?.name}</h1>
+        <h1 className=" text-gray-300  text-xs"> {task?.details}</h1>
+        <h1 className=" text-gray-300 text-xs"> {task?.deadlines}</h1>
+      </div>
       <button
         onClick={() => handleRemove(task.id)}
         className="bg-gray-900 rounded-full text-white text-l p-1"

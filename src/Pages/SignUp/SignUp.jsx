@@ -4,8 +4,8 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
 import { TbFidgetSpinner } from "react-icons/tb";
 import { useState } from "react";
-import useAuth from "../../../Hooks/useAuth";
-import { imageUpload } from "../../../Hooks/utilis";
+import useAuth from "../../Hooks/useAuth";
+import { imageUpload } from "../../Hooks/utilis";
 const SignUp = () => {
   const { createUser, updateUserProfile, signInWithGoogle } = useAuth();
   const navigate = useNavigate();

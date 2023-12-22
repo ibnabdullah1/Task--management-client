@@ -7,11 +7,11 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { Link, NavLink } from "react-router-dom";
-import useAuth from "../../../Hooks/useAuth";
+import useAuth from "../../Hooks/useAuth";
 
 export function StickyNavbar() {
   const [openNav, setOpenNav] = React.useState(false);
-  const { logout } = useAuth();
+  const { logout, user } = useAuth();
   const handleLogout = () => {
     return logout();
   };
@@ -109,6 +109,20 @@ export function StickyNavbar() {
               Log out
             </button>
           </div>
+
+          {user?.email && (
+            <div className="w-10 rounded-full">
+              <img
+                src={
+                  user?.photoURL
+                    ? user?.photoURL
+                    : "https://www.svgrepo.com/show/525577/user-circle.svg"
+                }
+                alt={user?.displayName}
+              />
+            </div>
+          )}
+
           <IconButton
             variant="text"
             className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
